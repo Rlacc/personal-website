@@ -17,7 +17,7 @@ mail = Mail(app)
 @app.route('/home')
 def home():
     skills = ["Java", "Python", "Flask", "HTML", "CSS", "JavaScript", "Jinja2"]
-    return render_template('home.html', skills=skills)
+    return render_template('index.html', skills=skills)
 
 
 @app.route('/projects')
