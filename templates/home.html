@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Ryan Lacourciere | Software Developer</title>
+</head>
+<body>
+{% extends 'navigationbar.html' %}
+{% block content %}
+<div style="text-align: center;">
+    <h1> Hi, im Ryan!</h1>
+    <hr>
+</div>
+
+<div>
+    <h2>About Me</h2>
+    <p>I am currently enrolled at the University of Maryland College Park as a computer science major and I'm a part of
+        the class of 2026. Thank you for viewing my website!</p>
+    <h3>My Interests</h3>
+    <ul>
+        <li>Golf</li>
+        <li>Baseball</li>
+        <li>Poker</li>
+    </ul>
+    <hr>
+</div>
+
+<div>
+    <h2>Technical Skills</h2>
+    <div aria-label="Technical Skills Buttons">
+        {% for skill in skills %}
+         <button type="button" class="btn btn-primary">{{skill}}</button>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

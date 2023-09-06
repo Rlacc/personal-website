@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+</head>
+<body>
+{% extends 'navigationbar.html' %}
+
+{% block content %}
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">Contact Information</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Email:</strong> rlacourciere1@gmail.com</li>
+                <li class="list-group-item"><strong>Phone:</strong> (301) 525-7324</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<hr>
+<h2 style="text-align: center;">Send me a message!</h2>
+<form id="messageForm" method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.name.label }}
+        {{ form.name(size=20, class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.email.label }}
+        {{ form.email(size=30, class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.message.label }}
+        {{ form.message(rows=5, class="form-control") }}
+    </div>
+    {{ form.submit(class="btn btn-primary mt-2") }}
+</form>
+<script>
+        {% if success == 2 %}
+            alert("Message successfully sent!");
+            document.getElementById("messageForm").reset();
+        {% elif success == 3 %}
+            alert("Form submission unsuccessful. Please check to make sure all fields were filled in correctly and try again.");
+        {% elif success == 4 %}
+            alert("An error has occurred. Please try again or contact me manually, thanks!")
+        {% endif %}
+</script>
+{% endblock %}
+</body>
+
+</html>
