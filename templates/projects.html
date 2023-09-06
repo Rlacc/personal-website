@@ -8,7 +8,30 @@
 {% extends 'navigationbar.html' %}
 
 {% block content %}
-<h1> hi my name is ryan and these are my projects</h1>
+<h2>Project Showcase</h2>
+<hr>
+<div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Left side with project images -->
+                <img src="img/Screenshot 2023-09-06 at 2.29.29 PM.png" alt="Project 1" class="img-fluid">
+                <img src="img/Screenshot 2023-09-06 at 2.29.29 PM.png" alt="Project 2" class="img-fluid">
+                <!-- Add more images as needed -->
+            </div>
+            <div class="col-md-6">
+                <!-- Right side with project descriptions -->
+                <div class="project-description">
+                    <h2>Project 1</h2>
+                    <p>this website</p>
+                </div>
+                <div class="project-description">
+                    <h2>Project 2</h2>
+                    <p>webscrapping project</p>
+                </div>
+                <!-- Add more project descriptions as needed -->
+            </div>
+        </div>
+    </div>
 {% endblock %}
 </body>
 </html>
