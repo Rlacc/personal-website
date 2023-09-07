@@ -3,7 +3,7 @@ from forms import ContactForm
 import secrets
 from flask_mail import Mail, Message
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = secrets.token_hex(16)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
@@ -13,10 +13,11 @@ app.config['MAIL_USERNAME'] = 'computersciencelac@gmail.com'
 app.config['MAIL_PASSWORD'] = 'ritgqwlnvvlstelo'
 mail = Mail(app)
 
+
 @app.route('/')
 @app.route('/home')
 def home():
-    skills = ["Java", "Python", "Flask", "HTML", "CSS", "JavaScript", "Jinja2"]
+    skills = ["Java", "Python", "Flask", "HTML", "CSS", "JavaScript", "Jinja2", "Git", "SQL"]
     return render_template('index.html', skills=skills)
 
 

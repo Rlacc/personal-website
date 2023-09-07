@@ -10,28 +10,28 @@
 {% block content %}
 <h2>Project Showcase</h2>
 <hr>
-<div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <!-- Left side with project images -->
-                <img src="img/Screenshot 2023-09-06 at 2.29.29 PM.png" alt="Project 1" class="img-fluid">
-                <img src="img/Screenshot 2023-09-06 at 2.29.29 PM.png" alt="Project 2" class="img-fluid">
-                <!-- Add more images as needed -->
-            </div>
-            <div class="col-md-6">
-                <!-- Right side with project descriptions -->
-                <div class="project-description">
-                    <h2>Project 1</h2>
-                    <p>this website</p>
-                </div>
-                <div class="project-description">
-                    <h2>Project 2</h2>
-                    <p>webscrapping project</p>
-                </div>
-                <!-- Add more project descriptions as needed -->
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <img src="/static/project1.png">
+            <div class="card-body">
+                <h5 class="card-title">project1</h5>
+                <p class="card-text">this is a project</p>
             </div>
         </div>
     </div>
+</div>
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <img src="/static/project1.png">
+            <div class="card-body">
+                <h5 class="card-title">project2</h5>
+                <p class="card-text">this is a project</p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 </body>
 </html>

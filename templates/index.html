@@ -7,11 +7,12 @@
 <body>
 {% extends 'navigationbar.html' %}
 {% block content %}
-<div style="text-align: center;">
-    <h1> Hi, im Ryan!</h1>
-    <hr>
+<div class="container mt-2">
+    <div style="text-align: center;">
+        <h1> Hi, im Ryan!</h1>
+        <hr>
+    </div>
 </div>
-
 <div>
     <h2>About Me</h2>
     <p>I am currently enrolled at the University of Maryland College Park as a computer science major and I'm a part of
@@ -29,7 +30,7 @@
     <h2>Technical Skills</h2>
     <div aria-label="Technical Skills Buttons">
         {% for skill in skills %}
-         <button type="button" class="btn btn-primary">{{skill}}</button>
+        <button type="button" class="btn btn-primary">{{skill}}</button>
         {% endfor %}
     </div>
 </div>
