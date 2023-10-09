@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, flash, request
+from flask import Flask, render_template, redirect, url_for, flash, request, send_file
 from forms import ContactForm
 import secrets
 from flask_mail import Mail, Message
@@ -28,7 +28,7 @@ def projects():
 
 @app.route('/resume')
 def resume():
-    return render_template('resume.html')
+    return send_file('./static/resume.pdf', as_attachment=False)
 
 
 @app.route('/contact', methods=['GET', 'POST'])
@@ -52,7 +52,6 @@ def contact():
             success = 4
 
     return render_template('contact.html', form=form, success=success)
-
 
 if __name__ == '__main__':
     app.run(debug=True)
