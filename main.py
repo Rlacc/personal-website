@@ -1,6 +1,4 @@
 from flask import Flask, render_template, redirect, url_for, flash, request, send_file
-
-import config
 from forms import ContactForm
 import secrets
 from flask_mail import Mail, Message
@@ -12,8 +10,8 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = config.mail_email
-app.config['MAIL_PASSWORD'] = config.mail_password
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 
 mail = Mail(app)
 
