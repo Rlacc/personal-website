@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for, flash, request, sen
 from forms import ContactForm
 import secrets
 from flask_mail import Mail, Message
+import os
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = secrets.token_hex(16)
@@ -9,8 +10,9 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = 'computersciencelac@gmail.com'
-app.config['MAIL_PASSWORD'] = 'ritgqwlnvvlstelo'
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+
 mail = Mail(app)
 
 
@@ -52,6 +54,3 @@ def contact():
             success = 4
 
     return render_template('contact.html', form=form, success=success)
-
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8080)
