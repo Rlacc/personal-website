@@ -54,3 +54,6 @@ def contact():
             success = 4
 
     return render_template('contact.html', form=form, success=success)
+
+if __name__ == "__main__":
+    app.run(port=8080)
